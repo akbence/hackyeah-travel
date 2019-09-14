@@ -39,7 +39,8 @@ section.search-form {
   padding-top: 50px;
   height: 500px;
   background-size: cover;
-  border-bottom: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
+  
 
   @media (max-width: $mobile-width) {
     height: 450px;
@@ -52,11 +53,12 @@ section.search-form {
 }
 
 section.second {
-  background-image: url(/assets/images/bg.jpg);
+  //background-image: ;
   padding-top: 50px;
   height: 500px;
   background-size: cover;
   border-bottom: 1px solid #ddd;
+  background-color: white;
 
   @media (max-width: $mobile-width) {
     height: 450px;
@@ -105,4 +107,5 @@ header {
       font-size: 0.8rem;
     }
   }
+
 }
