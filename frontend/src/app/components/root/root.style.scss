@@ -69,21 +69,15 @@ section.search-form {
 
 section.second {
   //background-image: ;
-  padding: 500px;
-  padding-top: 50px;
-  height: 500px;
+  //padding: 500px;
+  padding: 230px;
+  padding-top: 500px;
+  height: 1500px;
   background-size: cover;
   border-bottom: 1px solid #ddd;
   background-color: white;
+  color: rgb(3, 0, 0);
 
-  @media (max-width: $mobile-width) {
-    height: 450px;
-  }
-
-  ::ng-deep mat-card.card {
-    opacity: 0.95;
-    min-height: 322px;
-  }
 }
 
 footer {
