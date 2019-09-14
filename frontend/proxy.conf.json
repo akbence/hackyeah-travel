@@ -1,0 +1,8 @@
+{
+  "/rest/*": {
+    "target": "https://dev.book.lot.com/bfm",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

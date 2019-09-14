@@ -1,0 +1,72 @@
+<section class="history">
+  <mat-card class="card history-card">
+    <div class="row">
+      <div class="card-private col-sm-5">
+          <div class="card-header">Header</div>
+          <div class="card-body text-primary">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+              Single toggle
+            </button>
+          </div>
+      </div>
+      <div class="card col-sm-5">
+          <div class="card-private">Header</div>
+          <div class="card-body text-primary">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-primary">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-primary">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="card border-primary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body text-primary">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 18rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body text-primary">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+          </div>
+        </div>
+  </mat-card>
+  <!--mat-card class="card history-card">
+    <ng-container *ngIf="history; else noHistory">
+      <mat-card class="history-item" *ngFor="let h of history; let i = index"
+        (click)="searchFromHistory(i)" [ngStyle]="{'background-image': cityImage(h.destination[0])}">
+        <div class="details">
+          <div class="title">{{h.origin[0]}} - {{h.destination[0]}}</div>
+          <div class="dates"><mat-icon>flight_takeoff</mat-icon>{{makeDate(h.departureDate[0]) | date }}</div>
+          <div class="dates"><mat-icon>flight_land</mat-icon>{{makeDate(h.returnDate) | date}}</div>
+        </div>
+        <span class="close" (click)="removeSearch(i)"><mat-icon>close</mat-icon></span>
+      </mat-card>
+    </ng-container>
+    <ng-template #noHistory>
+      <div class="message">There is no search history yet.</div>
+    </ng-template>
+  </mat-card!-->
+</section>

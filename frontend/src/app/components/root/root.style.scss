@@ -1,0 +1,90 @@
+@import "config.style";
+
+mat-tab-group {
+  ::ng-deep mat-tab-header {
+    width: $site-width;
+    max-width: $site-width-max;
+    background: transparent;
+    margin: auto;
+  }
+  ::ng-deep .mat-tab-label {
+    color: #fff;
+
+    &:nth-child(3) {
+      @media (max-width: $mobile-width) {
+        display: none;
+      }
+    }
+  }
+}
+
+.tab-content {
+  width: $site-width;
+  max-width: $site-width-max;
+  margin: 5px auto 50px;
+  display: block;
+
+  @media (max-width: $tablet-width) {
+    width: $site-width-tablet;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 102%;
+    margin: 5px auto 30px -1%;
+  }
+}
+
+section.search-form {
+  background-image: url(/assets/images/bg.jpg);
+  padding-top: 50px;
+  height: 500px;
+  background-size: cover;
+  border-bottom: 1px solid #ddd;
+
+  @media (max-width: $mobile-width) {
+    height: 450px;
+  }
+
+  ::ng-deep mat-card.card {
+    opacity: 0.95;
+    min-height: 322px;
+  }
+}
+
+footer {
+  border-top: 1px solid $site-color;
+  padding: 10px;
+  color: #ccc;
+  font-size: .8em;
+  text-align: center;
+}
+
+header {
+  position: relative;
+  a {
+    display: block;
+    width: 200px;
+    height: 130px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(/assets/images/logo-lot.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  section.language {
+    width: $site-width;
+    max-width: $site-width-max;
+    background: transparent;
+    margin: auto;
+    position: relative;
+
+    .title {
+      position: absolute;
+      right: 0;
+      top: 7px;
+      color: #ddd;
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<section class="search">
+  <mat-card class="card">
+    <div class="directions">
+      <ng-container *ngIf="aiports$ | async as aiports">
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <mat-select placeholder="From" [(ngModel)]="portFrom">
+            <mat-optgroup *ngFor="let country of aiports" [label]="country.country">
+              <mat-option *ngFor="let city of country.cities" [value]="city.iata">{{city.city}} <span>{{city.iata}}</span></mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <mat-select placeholder="To" [(ngModel)]="portTo">
+            <mat-optgroup *ngFor="let country of aiports" [label]="country.country">
+              <mat-option *ngFor="let city of country.cities" [value]="city.iata">{{city.city}} <span>{{city.iata}}</span></mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+    </div>
+    <div class="dates">
+      <mat-form-field appearance="outline">
+        <mat-label>Departure Date</mat-label>
+        <input matInput readonly [(ngModel)]="dF" [matDatepicker]="dateFrom" [min]="minDateFrom" placeholder="Departure Date" (click)="dateFrom.open()">
+        <mat-datepicker-toggle matSuffix [for]="dateFrom"></mat-datepicker-toggle>
+        <mat-datepicker #dateFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Return Date</mat-label>
+        <input matInput readonly [(ngModel)]="dT" [matDatepicker]="dateTo" [min]="minDateTo" placeholder="Return Date" (click)="dateTo.open()">
+        <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+        <mat-datepicker #dateTo></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="flight-options">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Additional search parameters
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="outline">
+            <mat-label>Adults</mat-label>
+            <mat-select placeholder="Adults" [(ngModel)]="adt">
+              <mat-option *ngFor="let passanger of passengersLimit" [value]="passanger">{{passanger}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Children</mat-label>
+            <mat-select placeholder="Children" [(ngModel)]="chd">
+              <mat-option *ngFor="let passanger of passengersLimit" [value]="passanger">{{passanger}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Teenagers</mat-label>
+            <mat-select placeholder="Teenagers" [(ngModel)]="c14">
+              <mat-option *ngFor="let passanger of passengersLimit" [value]="passanger">{{passanger}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Infants</mat-label>
+            <mat-select placeholder="Infants" [(ngModel)]="inf">
+              <mat-option *ngFor="let passanger of passengersLimit" [value]="passanger">{{passanger}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Cabin Class</mat-label>
+            <mat-select placeholder="Cabin Class" [(ngModel)]="class">
+              <mat-option *ngFor="let class of [{title: 'Economy', name: 'E'}, {title: 'Premium', name: 'F'}, {title: 'Business', name: 'B'}]" [value]="class.name">{{class.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="search-button" *ngIf="authService.accessToken && !searchService.searchProgress; else progressBar">
+      <button mat-raised-button color="primary" (click)="clickSearch()"><mat-icon>search</mat-icon> Search</button>
+    </div>
+    <div class="error" *ngIf="errorMessage"><mat-icon>warning</mat-icon><span>{{errorMessage}}</span></div>
+  </mat-card>
+  <ng-template #progressBar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+</section>

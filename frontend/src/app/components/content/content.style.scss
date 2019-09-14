@@ -1,0 +1,73 @@
+@import "../root/config.style";
+
+mat-card.history-card {
+  @media (max-width: $mobile-width) {
+    text-align: center;
+  }
+}
+
+mat-icon {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+
+section.history {
+  .message {
+    font-size: 1.1em;
+    color: #555;
+    padding: 10px;
+  }
+}
+
+mat-card.history-item {
+  height: auto;
+  display: inline-block;
+  margin: 1.1%;
+  position: relative;
+  cursor: pointer;
+  width: 31%;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-size: 33% 101%;
+  padding: 8px;
+
+  @media (max-width: $mobile-width) {
+    width: 95%;
+    margin: 5% 0;
+  }
+
+  &:nth-child(n+4) {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  .title {
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+  }
+
+  .dates {
+    mat-icon {
+      font-size: 15px;
+      vertical-align: middle;
+      color: $blue-light-color;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.4), 0 1px 1px 0 rgba(0,0,0,.3), 0 1px 3px 0 rgba(0,0,0,.3)
+  }
+
+  .close {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    color: #F44336;
+  }
+
+  .details {
+    padding: 0 0 0 35%;
+  }
+}

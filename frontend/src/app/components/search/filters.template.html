@@ -1,0 +1,59 @@
+<section class="filters">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Filter results
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="group">
+        <div class="title">Fare</div>
+        <mat-slide-toggle (change)="emitFilters()" [(ngModel)]="filterParams.fare.saver">SAVER</mat-slide-toggle>
+        <mat-slide-toggle (change)="emitFilters()" [(ngModel)]="filterParams.fare.standard">STANDARD</mat-slide-toggle>
+        <mat-slide-toggle (change)="emitFilters()" [(ngModel)]="filterParams.fare.flex">FLEX</mat-slide-toggle>
+        <mat-slide-toggle (change)="emitFilters()" [(ngModel)]="filterParams.fare.bizstd">BIZSTD</mat-slide-toggle>
+      </div>
+      <div class="group group-price">
+        <div class="title title-price">Max Price <span>({{showMaxPrice()}})</span></div>
+        <mat-slider
+          [max]=filterService.maxPrice.value
+          [min]="0"
+          [step]="100"
+          [thumbLabel]="true"
+          (change)="emitFilters()"
+          [(ngModel)]="filterParams.price.max">
+        </mat-slider>
+      </div>
+      <div class="group">
+        <div class="title">Departure Time</div>
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <mat-select placeholder="From" [(ngModel)]="filterParams.departure.min" (change)="emitFilters()">
+            <mat-option *ngFor="let hour of hours" [value]="hour|date:'H'">{{hour|date:'HH:00'}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <mat-select placeholder="From" [(ngModel)]="filterParams.departure.max" (change)="emitFilters()">
+            <mat-option *ngFor="let hour of hours" [value]="hour|date:'H'">{{hour|date:'HH:00'}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="group">
+        <div class="title">Return Time</div>
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <mat-select placeholder="From" [(ngModel)]="filterParams.return.min" (change)="emitFilters()">
+            <mat-option *ngFor="let hour of hours" [value]="hour|date:'H'">{{hour|date:'HH:00'}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <mat-select placeholder="From" [(ngModel)]="filterParams.return.max" (change)="emitFilters()">
+            <mat-option *ngFor="let hour of hours" [value]="hour|date:'H'">{{hour|date:'HH:00'}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>

@@ -1,0 +1,51 @@
+<section class="search-results" *ngIf="!searchService.searchProgress">
+  <ng-container *ngIf="searchService.out && searchService.out.data.length > 0">
+    <search-filters [filterParams]="filterParams" (filters)="passFilters($event)"></search-filters>
+    <ng-container *ngFor="let dataOut of searchService.out.data">
+      <ng-container *ngFor="let out of dataOut">
+        <mat-card *ngIf="checkFilters(out, filterParams)">
+          <div class="fligh-info">
+            <section class="bound outbound">
+              <div class="logo">
+                <span class="img" [style.background-image]="logotype(out.outbound.segments[0].carrier)"></span>
+              </div>
+              <div class="date">
+                <div>{{out.outbound.segments[0].departureDate | date:'yyyy-MM-dd'}}, <strong>{{out.outbound.segments[0].departureDate | date:'HH:mm'}}</strong></div>
+                <div class="under">{{out.outbound.segments[0].departureAirport}} - {{out.outbound.segments[0].arrivalAirport}}</div>
+              </div>
+              <div class="duration">
+                <div>{{calculateDuration(out.outbound.segments[0].duration)}}</div>
+                <div class="under">{{out.outbound.fareType}}</div>
+              </div>
+              <div class="type">
+                <div>Direct</div>
+                <div class="under">{{out.outbound.segments[0].operationCarrier}}{{out.outbound.segments[0].flightNumber}}</div>
+              </div>
+            </section>
+            <section class="bound inbound">
+              <span class="logo">
+                <span class="img" [ngStyle]="{'background-image': 'url(assets/images/'+out.inbound.segments[0].carrier+'.jpg)'}"></span>
+              </span>
+              <div class="date">
+                <div>{{out.inbound.segments[0].departureDate | date:'yyyy-MM-dd'}}, <strong>{{out.inbound.segments[0].departureDate | date:'HH:mm'}}</strong></div>
+                <div class="under">{{out.inbound.segments[0].departureAirport}}-{{out.inbound.segments[0].arrivalAirport}}</div>
+              </div>
+              <div class="duration">
+                <div>{{calculateDuration(out.inbound.segments[0].duration)}}</div>
+                <div class="under">{{out.inbound.fareType}}</div>
+              </div>
+              <div class="type">
+                <div>Direct</div>
+                <div class="under">{{out.inbound.segments[0].operationCarrier}}{{out.inbound.segments[0].flightNumber}}</div>
+              </div>
+            </section>
+          </div>
+          <section class="booking">
+            <span class="price">{{out.totalPrice.price | number:'1.0-0'}} {{out.totalPrice.currency}}</span>
+            <a mat-raised-button color="primary" [href]="out.url" target="_blank">Book</a>
+          </section>
+        </mat-card>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</section>
