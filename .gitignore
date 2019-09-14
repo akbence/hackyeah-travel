@@ -1,2 +1,4 @@
 /.idea
 ./idea
+/target
+backend/src/main/resources/apikey.properties
