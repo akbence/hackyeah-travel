@@ -1,0 +1,13 @@
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/Secured.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/AuthenticationFilter.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/rest/Response/LoginResponse.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/rest/Input/UserAuthInput.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/rest/RestService.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/LoggedInService.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/entities/UserEntity.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/jpa/EntityManagerProducer.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/dao/UserDao.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/User.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/AuthService.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/PasswordHandler.java
+/home/akbence/Dev/codebase/hackathon/backend/src/main/java/service/authentication/LoggedIn.java

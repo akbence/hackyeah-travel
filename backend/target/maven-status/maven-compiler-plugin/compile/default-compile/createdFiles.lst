@@ -1,0 +1,13 @@
+entities/UserEntity.class
+rest/Input/UserAuthInput.class
+rest/Response/LoginResponse.class
+service/authentication/PasswordHandler.class
+service/authentication/Secured.class
+jpa/EntityManagerProducer.class
+rest/RestService.class
+service/authentication/AuthenticationFilter.class
+service/authentication/AuthService.class
+service/authentication/LoggedInService.class
+service/authentication/User.class
+dao/UserDao.class
+service/authentication/LoggedIn.class
