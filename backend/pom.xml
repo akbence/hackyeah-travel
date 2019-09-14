@@ -54,6 +54,12 @@
             <version>${common.codec.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+
     </dependencies>
 
 
