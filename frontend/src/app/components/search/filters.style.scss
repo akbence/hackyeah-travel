@@ -1,0 +1,30 @@
+section.filters {
+  margin-top: 10px;
+  .mat-slide-toggle {
+    margin-right: 40px;
+  }
+  .mat-form-field {
+    margin-right: 20px;
+  }
+  .mat-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+  .group {
+    &.group-price {
+      padding: 20px 0 5px;
+      .title {
+        padding: 7px 2px 0;
+      }
+    }
+    .title {
+      padding: 7px 2px;
+      font-size: 1.1em;
+      &.title-price {
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

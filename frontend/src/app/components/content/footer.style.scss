@@ -1,0 +1,65 @@
+@import "../root/config.style";
+
+footer {
+  background-color: #222;
+  color: #aaa;
+  a {
+    color: #aaa;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: #ddd;
+    }
+  }
+  .copyrights {
+    background-color: $background-color;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 8px;
+  }
+  .wrapper {
+    width: $site-width;
+    max-width: $site-width-max;
+    margin: auto;
+    padding: 10px;
+  }
+  .social {
+    padding: 10px 0 0;
+    a.github {
+      width: 35px;
+      height: 35px;
+      background-image: url(/assets/images/github.png);
+      display: inline-block;
+      background-size: contain;
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 0 0 10px;
+    }
+  }
+  .title {
+    color: #ddd;
+    font-size: 1.1em;
+    padding: 0 0 5px 0;
+  }
+  .boxrow {
+    padding: 2px 0;
+  }
+  .about {
+    width: 55%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .links {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    .box {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}

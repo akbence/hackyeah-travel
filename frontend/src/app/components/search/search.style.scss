@@ -1,0 +1,80 @@
+@import "../root/config.style";
+
+.search-results {
+  width: $site-width;
+  max-width: $site-width-max;
+  margin: auto;
+
+  mat-card {
+    margin: 10px 0;
+    padding: 25px 10px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: $site-width-tablet;
+  }
+}
+
+.fligh-info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  .under {
+    font-size: 0.85em;
+    color: #888;
+  }
+}
+
+section.bound {
+  display: flex;
+  width: 100%;
+  &.outbound {
+    padding-bottom: 20px;
+    align-items: flex-end;
+  }
+  &.inbound {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    align-items: flex-start;
+  }
+  .logo {
+    width: 15%;
+    position: relative;
+    height: 30px;
+    .img {
+      background-position: 50%;
+      background-size: auto 30px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      height: 100%;
+      transform: translate(0, -50%);
+    }
+
+  }
+  .date {
+    width: 40%;
+    margin: auto;
+  }
+  .duration {
+    width: 20%;
+  }
+  .type {
+    width: 20%;
+  }
+}
+
+section.booking {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25%;
+  text-align: center;
+  .price {
+    text-align: center;
+    font-size: 1.5em;
+    color: $site-color;
+    margin: 0 0 10px;
+    display: block;
+  }
+}

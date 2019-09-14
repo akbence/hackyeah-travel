@@ -1,0 +1,21 @@
+<header>
+  <a href="http://www.lot.com"></a>
+  <section class=language>
+    <div class="title">Poland | PLN</div>
+  </section>
+</header>
+<main>
+  <section class="search-form">
+    <mat-tab-group mat-align-tabs="end"
+      (selectedTabChange)="changedTab($event)" [(selectedIndex)]="selectedTabIndex">
+      <mat-tab label="Search">
+        <search-form class="tab-content"></search-form>
+      </mat-tab>
+      <mat-tab label="History">
+        <content-history class="tab-content"></content-history>
+      </mat-tab>
+    </mat-tab-group>
+  </section>
+  <search-results></search-results>
+</main>
+<app-footer></app-footer>
