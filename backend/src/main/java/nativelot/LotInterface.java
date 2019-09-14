@@ -87,16 +87,15 @@ public class LotInterface {
             for (JsonValue jsonValue : countries) {
                 JsonObject countryDatas= (JsonObject) jsonValue;
                 Airport airport = new Airport();
-                airport.setCountry(countryDatas.get("country").toString());
+                airport.setCountry(countryDatas.get("country").toString().replace("\"",""));
                 JsonArray citiesDatas= (JsonArray) countryDatas.get("cities");
                 for (JsonValue citiesData : citiesDatas) {
                     City city = new City();
-                    city.setCity(((JsonObject)citiesData).get("city").toString());
-                    city.setIata(((JsonObject)citiesData).get("iata").toString());
+                    city.setCity(((JsonObject)citiesData).get("city").toString().replace("\"",""));
+                    city.setIata(((JsonObject)citiesData).get("iata").toString().replace("\"",""));
                     airport.getCities().add(city);
                 }
                 System.out.println(airport.getCountry());
-                airport.getCities().forEach(t -> System.out.println(t.getCity()+ " "+ t.getIata()) );
                 ret.add(airport);
             }
             return ret;
