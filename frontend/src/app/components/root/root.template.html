@@ -8,21 +8,32 @@
   <section class="search-form">
     <mat-tab-group mat-align-tabs="end"
       (selectedTabChange)="changedTab($event)" [(selectedIndex)]="selectedTabIndex">
-      <mat-tab label="Search">
+      <mat-tab label="I figure out my journey">
         <search-form class="tab-content"></search-form>
       </mat-tab>
-      <mat-tab label="Recommendations">
+      <mat-tab label="Why would I love to travel?">
         <content-history class="tab-content"></content-history>
       </mat-tab>
     </mat-tab-group>
   </section>
-
-  <section class="second">
- 
-    
-  
+  <section class="transparent">
   </section>
 
-  <search-results></search-results>
+
+  <section class="second">
+    
+      <p><font size="5">Our suggestions for you</font></p>
+
+ 
+
+          <img src="/assets/images/cities/citiy.jpg" img src="/assets/images/cities/citiy.jpg" class="img-fluid" alt="asd" height="333px" width="500px">
+
+
+
+  
+    </section>
+    
+    <search-results></search-results>
+
 </main>
 <app-footer></app-footer>

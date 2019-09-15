@@ -41,6 +41,8 @@ section.search-form {
   background-size: cover;
   //border-bottom: 1px solid #ddd;
   
+  position: absolute;
+  width: 100%;
 
   @media (max-width: $mobile-width) {
     height: 450px;
@@ -52,22 +54,30 @@ section.search-form {
   }
 }
 
+.wrapper {
+  position: relative;
+}
+
+.transparent {
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.04), #ffffff);
+  width: 100%;
+  height: 500px;
+}
+
+
+
 section.second {
   //background-image: ;
-  padding-top: 50px;
-  height: 500px;
+  //padding: 500px;
+  padding: 230px;
+  padding-top: 500px;
+  height: 1500px;
   background-size: cover;
   border-bottom: 1px solid #ddd;
   background-color: white;
+  color: rgb(3, 0, 0);
 
-  @media (max-width: $mobile-width) {
-    height: 450px;
-  }
-
-  ::ng-deep mat-card.card {
-    opacity: 0.95;
-    min-height: 322px;
-  }
 }
 
 footer {
