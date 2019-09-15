@@ -35,9 +35,9 @@ mat-tab-group {
 }
 
 section.search-form {
-  background-image: url(/assets/images/bg.jpg);
+  background-image: url(/assets/images/bg2.jpg);
   padding-top: 50px;
-  height: 500px;
+  height: auto;
   background-size: cover;
   //border-bottom: 1px solid #ddd;
   
@@ -72,7 +72,7 @@ section.second {
   //padding: 500px;
   padding: 230px;
   padding-top: 500px;
-  height: 1500px;
+  height: 100%;
   background-size: cover;
   border-bottom: 1px solid #ddd;
   background-color: white;
